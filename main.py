@@ -1,16 +1,18 @@
-import argparse                                                                                                                                      
-                                                                                                                                                     
-def process_arguments():                                                                                                                             
-    parser = argparse.ArgumentParser(description='Process command-line arguments')                                                                   
-    parser.add_argument('-f', '--file', required=True, help='Input file path')                                                                       
-    parser.add_argument('-o', '--output', required=True, help='Output file path')                                                                    
-    args = parser.parse_args()                                                                                                                       
-    return args
+import logging
+import argparse
+import generate
 
-def main():                                                                                                                                          
-    args = process_arguments()                                                                                                                       
-    print(f'Input file: {args.file}')                                                                                                                
-    print(f'Output file: {args.output}')                                                                                                             
-                                                                                                                                                     
-if __name__ == '__main__':                                                                                                                           
+logger = logging.getLogger(__name__)
+
+def get_work_dir(argv=None):
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-w', '--work-dir', required=True, help='Work directory')
+    return parser.parse_args(argv)
+
+def main():
+    generate.generate(work_dir)
+    logger.info('Completed.')
+
+if __name__ == '__main__':
+    work_dir = get_work_dir().work_dir
     main()
