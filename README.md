@@ -24,5 +24,5 @@ pip install -r requirements.txt
 To run the program, enter the following command.
 
 ```
-python main.py --work-dir '/Users/myee/repos/instruqt/satellite-advanced-topics/'
+python main.py --work-dir '/Users/myee/repos/instruqt/satellite-advanced-topics'
 ```

@@ -8,7 +8,7 @@ def generate(work_dir):
     start_dir = os.getcwd()
     cwd = work_dir
     directories = cwd.split(os.sep)
-    out_filename = directories[-2] + '.md'
+    out_filename = directories[-1] + '.md'
 
     # Create an empty string to hold all markdown contents after "---"
     all_contents = ""
